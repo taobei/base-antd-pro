@@ -10,6 +10,7 @@ import type { ProDescriptionsItemProps } from '@ant-design/pro-descriptions';
 import ProDescriptions from '@ant-design/pro-descriptions';
 import type { FormValueType } from './components/UpdateForm';
 import UpdateForm from './components/UpdateForm';
+import ListFilter from './components/ListFilter';
 import { rule, addRule, updateRule, removeRule } from '@/services/ant-design-pro/api';
 
 /**
@@ -239,6 +240,7 @@ const TableList: React.FC = () => {
 
   return (
     <PageContainer>
+      {/* <ListFilter /> */}
       <ProTable<API.RuleListItem, API.PageParams>
         headerTitle={intl.formatMessage({
           id: 'pages.searchTable.title',
@@ -246,9 +248,8 @@ const TableList: React.FC = () => {
         })}
         actionRef={actionRef}
         rowKey="key"
-        search={{
-          labelWidth: 120,
-        }}
+        search={false}
+        tableExtraRender={() => <ListFilter />}
         toolBarRender={() => [
           <Button
             type="primary"

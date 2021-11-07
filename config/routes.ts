@@ -47,7 +47,7 @@
     icon: 'table',
     path: '/list',
     component: './TableList',
-    access: 'normalRouteFilter',
+    // access: 'normalRouteFilter',
   },
   {
     path: '/',
